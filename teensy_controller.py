@@ -1,4 +1,7 @@
-from smbus2 import SMBus
+
+import digitalio
+import busio
+
 
 # ============================================================
 # IMU-Teensy Integration code for GNC Icarus w/ simulation
@@ -16,16 +19,16 @@ PWR_MODE = 0x3e
 GYR_Config_0 = 0x0a
 GYR_Config_1 = 0x0b
 GYR_DATA_X_LSB = 0x14
-#all gyroscopic data goes to address 0x19 X,Y,Z
+#all gyroscopic data goes to address 0x19 X,Y,Z at 2 bytes per
 QUA_DATA_W_LSB = 0x20
-#all quaternion data goes to address 0x27 W,X,Y,Z
+#all quaternion data goes to address 0x27 W,X,Y,Z 2 bytes per
 
 #IMU Configuration
 with SMBus(1) as bus:
     #operating mode to GYROONLY
     bus.write_byte_data(IMU, OPR_MODE, 0b00000011)
-    #unit selection
-    bus.write_byte_data(IMU, UNIT_SEL, 0b00000110)
+    #unit selection (m/s^2, DPS, Degrees, Celsius)
+    bus.write_byte_data(IMU, UNIT_SEL, 0b00000000)
     
 
 def main():

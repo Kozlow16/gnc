@@ -69,6 +69,7 @@ thruster_off_time = 0  # When to turn off the thruster
 # GREEN Blinking = Alive and Running
 # YELLOW Blinking = Waiting for Avionics Send
 
+'''
 red_led = digitalio.DigitalInOut(board.D9)  # Change PIN if needed
 red_led.direction = digitalio.Direction.OUTPUT
 
@@ -77,6 +78,7 @@ green_led.direction = digitalio.Direction.OUTPUT
 
 yellow_led = digitalio.DigitalInOut(board.D5)
 yellow_led.direction = digitalio.Direction.OUTPUT
+'''
 
 # Setup PINS for Mosfets
 
