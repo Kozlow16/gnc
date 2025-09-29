@@ -28,7 +28,7 @@ with SMBus(1) as bus:
     #operating mode to GYROONLY
     bus.write_byte_data(IMU, OPR_MODE, 0b00000011)
     #unit selection (m/s^2, DPS, Degrees, Celsius)
-    bus.write_byte_data(IMU, UNIT_SEL, 0b00000000)
+    bus.write_byte_data(IMU, UNIT_SEL, 0b00000110)
     
 
 def main():
