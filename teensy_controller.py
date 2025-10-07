@@ -1,6 +1,5 @@
-
-import digitalio
-import busio
+#libraries
+from smbus2 import SMbus
 
 
 # ============================================================
