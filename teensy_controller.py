@@ -23,7 +23,7 @@ QUA_DATA_W_LSB = 0x20
 #all quaternion data goes to address 0x27 W,X,Y,Z 2 bytes per
 
 #IMU Configuration
-i2c = busio.I2C(board.SCL, board.SDA)
+i2c = busio.I2C(board.P24, board.P25)
 
     
 
