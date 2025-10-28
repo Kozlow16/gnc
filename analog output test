@@ -1,0 +1,19 @@
+
+int ledPin = 13;      // LED connected to digital pin 9
+int val = 0;         // variable to store the read value
+
+void setup() {
+  pinMode(ledPin, OUTPUT);  // sets the pin as output
+}
+
+void loop() {
+  int i = 1;
+  while (i<100) {
+    int brightness = i;
+    analogWrite(ledPin, brightness);
+    i = i+1;
+    delay(100);
+  }
+    
+  analogWrite(ledPin, val / 4); // analogRead values go from 0 to 1023, analogWrite values from 0 to 255
+}
